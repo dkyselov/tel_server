@@ -6,11 +6,28 @@
     }
   </style>
   <template>
-  <h1>Hello world</h1>  
+  <h1>{{fullName}}</h1>  
   </template>
 </dom-module>
 <script>
   Polymer({
-    is: 'hello-world'
+    is: 'hello-world',
+    properties:{
+      firstName:{
+        type:String,
+        value:"DMYTRO"
+      },
+      lastName:{
+        type:String,
+        value: "KYSELOV"
+      },
+      fullName:{
+        type:String,
+        computed:'computeFullName(firstName,lastName)'
+      }
+    },
+    computeFullName:function(firstName,lastName){
+      return firstName + ' ' + lastName; 
+    }
   });
 </script>
