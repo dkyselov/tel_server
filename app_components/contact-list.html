@@ -24,7 +24,18 @@
     }
   </style>
   <template>
+    <h1>Contact list:</h1>
     <ul>
+      <template is="dom-repeat" items="{{contacts}}">
+        <li>
+            <img src="{{item.img}}" alt="" width="100px" height="100px">
+            <h3>{{item.name}}</h3>
+            <span>{{item.email}}</span>
+        </li>
+      </template>
+    </ul>
+     </template>
+   <!-- <ul>
         <li>
             <img src="../img/1.png" alt="" width="100px" height="100px">
             <h3>Scott</h3>
@@ -40,28 +51,30 @@
             <h3>Gopnik</h3>
             <span>gopnik@ukr.net</span>
         </li>
-    </ul>
-  </template>
+    </ul>-->
+ 
 </dom-module>
 <script>
   Polymer({
     is: 'contact-list',
-    properties:{
-      firstName:{
-        type:String,
-        value:"DMYTRO"
-      },
-      lastName:{
-        type:String,
-        value: "KYSELOV"
-      },
-      fullName:{
-        type:String,
-        computed:'computeFullName(firstName,lastName)'
-      }
-    },
-    computeFullName:function(firstName,lastName){
-      return firstName + ' ' + lastName; 
+    ready:function(){
+      this.contacts=[
+        {
+          name: "Scott",
+          email: "scott@ukr.net",
+          img: "http://localhost/tel-server/img/1.png"
+        },
+        {
+          name: "Vasia",
+          email: "vasia@ukr.net",
+          img: "http://localhost/tel-server/img/2.png"
+        },
+        {
+          name: "Leha",
+          email: "leha@ukr.net",
+          img: "http://localhost/tel-server/img/3.png"
+        }
+      ]
     }
   });
 </script>
