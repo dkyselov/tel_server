@@ -6,3 +6,6 @@ hello-world h1.hello-world{
     color:red;
     font-family: Arial, Helvetica, sans-serif;
 }
+aside{
+    width: 50%;
+}
