@@ -28,8 +28,6 @@
     <!-- Ajax -->
     <iron-ajax
         auto
-        method="POST"
-        params="{{contacts}}"
         url="http://localhost/tel-server/data/contact-list.php"
         handle-as="json"
         last-response="{{response}}">

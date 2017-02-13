@@ -16,6 +16,5 @@ array(
     'img' => 'http://localhost/tel-server/img/3.png'
 ),
 );
-
 print_r(json_encode($contact_list));
 ?>
