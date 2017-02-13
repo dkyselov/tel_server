@@ -1,0 +1,73 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<dom-module id="contact-list-ajax">
+  <style>
+    ul {
+        list-style: none;
+    }
+    li {
+        display: flex;
+        padding: 20px;
+    }
+    li img{
+        border-radius:50%;
+        margin-right: 40px;
+    }
+    li + li{
+        border-top: solid 1px #666;
+    }
+    h3{
+        margin:0 40px 0 0;
+        line-height: 80px;
+    }
+    li span{
+        line-height: 80px;
+    }
+  </style>
+  <template>
+    <!-- Ajax -->
+    <iron-ajax
+        auto
+        method="POST"
+        params="{{contacts}}"
+        url="http://localhost/tel-server/data/contact-list.php"
+        handle-as="json"
+        last-response="{{response}}">
+    </iron-ajax>
+    <!--End ajax -->
+    <h1>Contact list:</h1>
+    <ul>
+      <template is="dom-repeat" items="{{response}}">
+        <li>
+            <img src="{{item.img}}" alt="" width="100px" height="100px">
+            <h3>{{item.name}}</h3>
+            <span>{{item.email}}</span>
+        </li>
+      </template>
+    </ul>
+     </template>
+</dom-module>
+<script>
+  Polymer({
+    is: 'contact-list-ajax',
+    ready:function(){
+      this.contacts=[
+        {
+          name: "Scott",
+          email: "scott@ukr.net",
+          img: "http://localhost/tel-server/img/1.png"
+        },
+        {
+          name: "Vasia",
+          email: "vasia@ukr.net",
+          img: "http://localhost/tel-server/img/2.png"
+        },
+        {
+          name: "Leha",
+          email: "leha@ukr.net",
+          img: "http://localhost/tel-server/img/3.png"
+        }
+      ]
+    }
+  });
+</script>

@@ -9,11 +9,11 @@
     <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
     <!-- import html components -->
     <link rel="import" href="bower_components/google-map/google-map.html">
-    <link rel="import" href="hello-world.html">
-    <link rel="import" href="app_components/contact-list.html">
+   <!-- <link rel="import" href="hello-world.html"> -->
+    <link rel="import" href="app_components/contact-list-ajax.html">
 </head>
 <body>
-    <script>
+   <!-- <script>
      var position_coordinats={};
       navigator.geolocation.getCurrentPosition(succes,error);
       function succes(position){
@@ -26,9 +26,6 @@
       map.longitude = position_coordinats.longitude;
       map_marker.latitude = position_coordinats.latitude;
       map_marker.longitude = position_coordinats.longitude;
-      /*map.addEventListener('google-map-ready', function(e) {
-        alert('Map loaded!');
-      });*/
         }
      function error(e){
         switch (e.code){
@@ -44,11 +41,11 @@
     }
         console.log(position_coordinats);
       
-    </script>
-    <google-map disable-default-ui zoom="15" api-key="AIzaSyDm1OfW3bFqUHpDh4bgbuhhKBkNO8awfns">
+    </script>-->
+   <!-- <google-map disable-default-ui zoom="15" api-key="AIzaSyDm1OfW3bFqUHpDh4bgbuhhKBkNO8awfns">
         <google-map-marker></google-map-marker>
-    </google-map><br/>
-    <contact-list></contact-list>
+    </google-map><br/>-->
+    <contact-list-ajax></contact-list-ajax>
     
    <!-- <hello-world></hello-world> -->
     
